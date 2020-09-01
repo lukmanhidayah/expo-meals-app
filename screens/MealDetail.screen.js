@@ -1,10 +1,15 @@
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
-const MealDetail = props => {
+import { MEALS } from "../data/dummy-data";
+
+const MealDetail = (props) => {
+  const mealId = props.navigation.getParam("mealId");
+
+  const selectedMeal = MEALS.find((meal) => (meal.id = mealId));
   return (
     <View style={styles.screen}>
-      <Text>The Meal Detail Screen</Text>
+      <Text>{selectedMeal.title}</Text>
       <Button
         title="Go Back to Catagories"
         onPress={() => {
@@ -13,6 +18,14 @@ const MealDetail = props => {
       />
     </View>
   );
+};
+
+MealDetail.navigationOption = (navigationData) => {
+  const mealId = navigationData.navigation.getParams("mealId");
+  const selectedMeal = MEALS.find((meal) => (meal.id = mealId));
+  return {
+    headerTitle: selectedMeal.title,
+  };
 };
 
 export default MealDetail;
