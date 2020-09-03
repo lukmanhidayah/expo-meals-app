@@ -1,7 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
+//all components needed
 import MealsList from "../components/MealsList";
+import HeaderButton from "../components/HeaderButton";
 
 import { MEALS } from "../data/dummy-data";
 
@@ -11,8 +14,21 @@ const Favorites = (props) => {
   return <MealsList navigation={props.navigation} listData={favMeals} />;
 };
 
-Favorites.navigationOptions = {
-  headerTitle: "Your Favorites",
+Favorites.navigationOptions = (navData) => {
+  return {
+    headerTitle: "Favorites Categories",
+    headerLeft: () => (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title="Menu"
+          iconName="ios-menu"
+          onPress={() => {
+            navData.navigation.toggleDrawer();
+          }}
+        />
+      </HeaderButtons>
+    ),
+  };
 };
 
 export default Favorites;
