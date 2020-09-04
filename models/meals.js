@@ -7,6 +7,7 @@ class Meals {
     complexity,
     imageUrl,
     duration,
+    ingredients,
     steps,
     isGluten,
     isVegan,
@@ -20,6 +21,7 @@ class Meals {
     this.complexity = complexity;
     this.imageUrl = imageUrl;
     this.duration = duration;
+    this.ingredients = ingredients;
     this.steps = steps;
     this.isGluten = isGluten;
     this.isVegan = isVegan;
