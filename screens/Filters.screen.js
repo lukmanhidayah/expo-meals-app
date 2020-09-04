@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
 import HeaderButton from "../components/HeaderButton";
-const Fliters = () => {
+const Filters = () => {
   return (
     <View>
       <Text>This is Filter screen</Text>
@@ -11,7 +11,7 @@ const Fliters = () => {
   );
 };
 
-Fliters.navigationOptions = (navData) => {
+Filters.navigationOptions = (navData) => {
   return {
     headerTitle: "Filters",
     headerLeft: () => (
@@ -28,6 +28,6 @@ Fliters.navigationOptions = (navData) => {
   };
 };
 
-export default Fliters;
+export default Filters;
 
 const styles = StyleSheet.create({});

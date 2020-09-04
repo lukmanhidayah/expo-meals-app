@@ -3,7 +3,7 @@ import MealsList from "../components/MealsList";
 
 import { CATEGORIES, MEALS } from "../data/dummy-data";
 
-const CatogoryMeals = (props) => {
+const CategoryMeals = (props) => {
   const catId = props.navigation.getParam("categoryId");
 
   const displayedMeals = MEALS.filter(
@@ -13,7 +13,7 @@ const CatogoryMeals = (props) => {
   return <MealsList listData={displayedMeals} navigation={props.navigation} />;
 };
 
-CatogoryMeals.navigationOptions = (navigationData) => {
+CategoryMeals.navigationOptions = (navigationData) => {
   const catId = navigationData.navigation.getParam("categoryId");
   const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
 
@@ -22,4 +22,4 @@ CatogoryMeals.navigationOptions = (navigationData) => {
   };
 };
 
-export default CatogoryMeals;
+export default CategoryMeals;

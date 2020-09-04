@@ -5,7 +5,7 @@ import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import { useScreens } from "react-native-screens";
 
-import MealsNavigator from "./navigations/MealsNavigator";
+import MealsNavigator from "./navigation/MealsNavigator";
 
 const fetchFonts = () => {
   return Font.loadAsync({

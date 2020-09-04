@@ -9,19 +9,19 @@ import {
 } from "react-native";
 
 const CategoryGridTile = (props) => {
-  let ToucahbleCmp = TouchableOpacity;
+  let TouchableCmp = TouchableOpacity;
   if (Platform.OS == "android" && Platform.Version >= 21) {
-    ToucahbleCmp = TouchableNativeFeedback;
+    TouchableCmp = TouchableNativeFeedback;
   }
   return (
     <View style={styles.gridItem}>
-      <ToucahbleCmp activeOpacity={0.7} onPress={props.onSelect}>
+      <TouchableCmp activeOpacity={0.7} onPress={props.onSelect}>
         <View
           style={{ ...styles.container, ...{ backgroundColor: props.color } }}
         >
           <Text style={styles.title}>{props.title}</Text>
         </View>
-      </ToucahbleCmp>
+      </TouchableCmp>
     </View>
   );
 };

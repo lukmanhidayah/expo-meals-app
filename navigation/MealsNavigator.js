@@ -9,13 +9,13 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 
 //all screens needed
 import Categories from "../screens/Categories.screen";
-import CatogoryMeals from "../screens/CatogoryMeals.Screen";
+import CategoryMeals from "../screens/CategoryMeals.Screen";
 import MealDetail from "../screens/MealDetail.screen";
 import Favorites from "../screens/Favorites.screen";
 import Filters from "../screens/Filters.screen";
 
 //all constants needed
-import Colors from "../constans/Colors";
+import Colors from "../constants/Colors";
 
 const defaultStackNavOptions = {
   // mode: "modal",
@@ -33,7 +33,7 @@ const MealsNavigator = createStackNavigator(
       screen: Categories,
     },
     CategoryMeals: {
-      screen: CatogoryMeals,
+      screen: CategoryMeals,
     },
     MealDetail: {
       screen: MealDetail,
