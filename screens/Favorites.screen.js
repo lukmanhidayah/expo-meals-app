@@ -6,9 +6,18 @@ import { useSelector } from "react-redux";
 //all components needed
 import MealsList from "../components/MealsList";
 import HeaderButton from "../components/HeaderButton";
+import DefaultText from "../components/DefaultText";
 
 const Favorites = (props) => {
   const availableMeals = useSelector((state) => state.meals.favoriteMeals);
+
+  if (availableMeals.length === 0 || !availableMeals) {
+    return (
+      <View style={styles.content}>
+        <DefaultText>No favorites meals found. Start adding some!</DefaultText>
+      </View>
+    );
+  }
 
   return <MealsList navigation={props.navigation} listData={availableMeals} />;
 };
@@ -33,7 +42,7 @@ Favorites.navigationOptions = (navData) => {
 export default Favorites;
 
 const styles = StyleSheet.create({
-  screen: {
+  content: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
