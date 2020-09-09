@@ -13,6 +13,8 @@ const mealsReducer = (state = initialState, action) => {
       const existingIndex = state.favoriteMeals.findIndex(
         (meal) => meal.id === action.mealId
       );
+       //if data is exits then delete the data
+       //if data not match then insert the data
       if (existingIndex >= 0) {
         const updatedFavMeals = [...state.favoriteMeals];
         updatedFavMeals.splice(existingIndex, 1);
