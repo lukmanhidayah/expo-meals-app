@@ -1,17 +1,16 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
+import { useSelector } from "react-redux";
 
 //all components needed
 import MealsList from "../components/MealsList";
 import HeaderButton from "../components/HeaderButton";
 
-import { MEALS } from "../data/dummy-data";
-
 const Favorites = (props) => {
-  const favMeals = MEALS.filter((meal) => meal.id == "m1" || meal.id == "m2");
+  const availableMeals = useSelector((state) => state.meals.favoriteMeals);
 
-  return <MealsList navigation={props.navigation} listData={favMeals} />;
+  return <MealsList navigation={props.navigation} listData={availableMeals} />;
 };
 
 Favorites.navigationOptions = (navData) => {
