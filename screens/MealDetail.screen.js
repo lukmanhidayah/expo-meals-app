@@ -23,7 +23,7 @@ const MealDetail = (props) => {
     state.meals.favoriteMeals.some((meal) => meal.id === mealId)
   );
 
-  const selectedMeal = availableMeals.find((meal) => (meal.id = mealId));
+  const selectedMeal = availableMeals.find((meal) => (meal.id === mealId));
 
   const dispatch = useDispatch();
 
@@ -34,7 +34,7 @@ const MealDetail = (props) => {
   useEffect(() => {
     //   props.navigation.setParams({ mealTitle: selectedMeal.title });
     props.navigation.setParams({ toggleFav: toggleFavoriteHandler });
-  }, [selectedMeal]);
+  }, [toggleFavoriteHandler]);
 
   useEffect(() => {
     props.navigation.setParams({ isFav: currentMealsFavorite });

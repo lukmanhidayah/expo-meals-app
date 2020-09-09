@@ -1,4 +1,4 @@
-class Meals {
+class Meal {
   constructor(
     id,
     categoryIds,
@@ -9,7 +9,7 @@ class Meals {
     duration,
     ingredients,
     steps,
-    isGluten,
+    isGlutenFree,
     isVegan,
     isVegetarian,
     isLactoseFree
@@ -17,17 +17,17 @@ class Meals {
     this.id = id;
     this.categoryIds = categoryIds;
     this.title = title;
-    this.affordability = affordability;
-    this.complexity = complexity;
     this.imageUrl = imageUrl;
-    this.duration = duration;
     this.ingredients = ingredients;
     this.steps = steps;
-    this.isGluten = isGluten;
+    this.duration = duration;
+    this.complexity = complexity;
+    this.affordability = affordability;
+    this.isGlutenFree = isGlutenFree;
     this.isVegan = isVegan;
     this.isVegetarian = isVegetarian;
     this.isLactoseFree = isLactoseFree;
   }
 }
 
-export default Meals;
+export default Meal;

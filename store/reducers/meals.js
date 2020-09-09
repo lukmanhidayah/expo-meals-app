@@ -13,18 +13,13 @@ const mealsReducer = (state = initialState, action) => {
       const existingIndex = state.favoriteMeals.findIndex(
         (meal) => meal.id === action.mealId
       );
-       //if data is exits then delete the data
-       //if data not match then insert the data
       if (existingIndex >= 0) {
         const updatedFavMeals = [...state.favoriteMeals];
         updatedFavMeals.splice(existingIndex, 1);
         return { ...state, favoriteMeals: updatedFavMeals };
       } else {
         const meal = state.meals.find((meal) => meal.id === action.mealId);
-        return {
-          ...state,
-          favoriteMeals: state.favoriteMeals.concat(meal),
-        };
+        return { ...state, favoriteMeals: state.favoriteMeals.concat(meal) };
       }
     default:
       return state;
